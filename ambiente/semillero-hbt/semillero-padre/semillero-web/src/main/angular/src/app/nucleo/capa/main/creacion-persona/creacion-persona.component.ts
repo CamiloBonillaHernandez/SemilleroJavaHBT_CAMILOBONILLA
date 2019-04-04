@@ -8,18 +8,13 @@ import {TipoIdentificacion} from './TipoIdentificacion'
 })
 export class CreacionPersonaComponent implements OnInit {
 
-  nombre : string ;
-  apellido : string ;
-  numId : string ;
-  id : string ;
-  tipoDocumento: string[];
-  
-
+ public nombre : string ;
+ public apellido : string ;
+ public numId : string ;
+ public id : string ;
+ public tipoDocumento: Array<string>=['Cedula','Tarjeta de identidad','Pasaporte'];
+ 
   constructor() {
-
-   const keys = Object.keys(TipoIdentificacion);
-      console.log(keys);
-
    }
 
   ngOnInit() {
