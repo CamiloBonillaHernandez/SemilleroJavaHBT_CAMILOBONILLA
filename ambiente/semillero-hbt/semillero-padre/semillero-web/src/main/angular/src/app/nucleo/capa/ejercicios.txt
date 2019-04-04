@@ -1,0 +1,3 @@
+- como funciona el routing usando los componentes creados ??
+- colocar los atriburos id, numero identificacion, nombre, apellido, tipo identificacion en el ts (asignar los tipos de datos y su valor)
+- colocar en el html del componente los atributos input y usando {{}}
