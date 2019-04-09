@@ -1,5 +1,29 @@
-<h2>{{ header }}</h2>
-<p>{{ nombre | uppercase }}</p>
-<p>{{ apellidos | uppercase }}</p>
-<p>{{ tipoIdentificacion | uppercase }}</p>
+<div>
+    <section>
+        <h2>{{ header }}</h2>
+    </section>
 
+    <br>
+
+    <section>
+        <input value="Gestionar" type="button" (click)="gestionarP()" />
+        <input value="Guardar" type="button" (click)="guardarP()" />
+        <input value="Editar" type="button" (click)="editarP()" />
+
+    </section>
+    <br>
+    <section>
+        <div *ngIf="gestionarPersona">
+            gestionar
+        </div>
+        <div *ngIf="guardarPersona">
+            guardar
+        </div>
+        <div *ngIf="editarPersona">
+            editar
+        </div>
+
+
+    </section>
+
+</div>

@@ -21,6 +21,7 @@ export class ApoyoComponent implements OnInit {
       id : '0',
       nombre : '',
       apellido : '',
+      fechaNacimiento: '',
       tipoIdentificacion : '',
       numeroIdentificacion : '',
       mayorEdad : false, //check  box 
