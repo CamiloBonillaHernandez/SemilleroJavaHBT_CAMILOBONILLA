@@ -9,7 +9,7 @@
     <input name="name" type="text" [(ngModel)]="persona.nombre"  placeholder="Nombre persona" />
   </section>
   <input value="Guardar" type="submit" (click)="guardar()">
-  <ul *ngIf ="personas.length>0; else empty">
+  <ul *ngIf ="personas.length>0">
     <li *ngFor ="let per of personas">
       <span>{{per.nombre | lowercase}} </span>
       <span>{{per.apellido | uppercase}}</span>

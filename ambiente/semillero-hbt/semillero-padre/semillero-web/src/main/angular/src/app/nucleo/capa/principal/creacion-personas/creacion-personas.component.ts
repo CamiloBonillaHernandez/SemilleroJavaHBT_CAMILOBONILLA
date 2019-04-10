@@ -14,6 +14,8 @@ export class CreacionPersonasComponent implements OnInit {
   public gestionarPersona :boolean;
   public guardarPersona : boolean;
   public editarPersona: boolean;
+  public stateComprador : boolean;
+  public stateVendedor : boolean;
 
 
  /*
@@ -35,13 +37,18 @@ export class CreacionPersonasComponent implements OnInit {
       tipoIdentificacion : '',
       numeroIdentificacion : '',
       mayorEdad : false, //check  box 
-      sexo : '' //radio button 
+      sexo : '', //radio button
+      telefono:'',
+      edad:'',
+      estado:'' 
     };
 
     this.personas =  [];
     this.gestionarPersona = false;
     this.guardarPersona = false;
     this.editarPersona = false;
+    this.stateComprador = false;
+    this.stateVendedor = false;
   }
 
   public mostrar(){
@@ -51,28 +58,42 @@ export class CreacionPersonasComponent implements OnInit {
 
   }
   public guardar(){
+    this.setState();
     this.personas.push(this.persona);
-    console.log('guardar()' + this.persona.nombre);
+    for (let i = 0; i < this.personas.length; i++) {
+      const element = this.personas[i];
+      console.log(element);
+      
+    }
+  }
+
+  public setState(){
+    if (this.stateComprador) {
+      this.persona.estado = 'Comprador';
+    }else if(this.stateVendedor){
+      this.persona.estado = 'Vendedor';
+    }
   }
 
   private borrar(){
 
   }
 
+  public consultar(){
+    
+  }
+
   public gestionarP(){
-    console.log('gestionar');
     this.gestionarPersona = true;
     this.editarPersona  = false;
     this.guardarPersona = false;
   }
-  public editarP(){
-    console.log('editar');
+  public editarP(){;
     this.editarPersona  = true;
     this.guardarPersona = false;
     this.gestionarPersona = false;
   }
   public guardarP(){
-    console.log('guardar');
     this.guardarPersona = true;
     this.editarPersona  = false;
     this.gestionarPersona = false;

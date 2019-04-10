@@ -25,7 +25,10 @@ export class ApoyoComponent implements OnInit {
       tipoIdentificacion : '',
       numeroIdentificacion : '',
       mayorEdad : false, //check  box 
-      sexo : '' //radio button 
+      sexo : '', //radio button
+      telefono : '',
+      edad: '',
+      estado:''
     };
 
     this.personas =  [];

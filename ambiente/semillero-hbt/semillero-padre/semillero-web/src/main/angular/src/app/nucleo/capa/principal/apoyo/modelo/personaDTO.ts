@@ -7,4 +7,7 @@ export interface personaDTO{
     numeroIdentificacion: number | string;
     mayorEdad:boolean;
     sexo:string;
+    telefono: number | string;
+    edad: number | string;
+    estado:string;
 }

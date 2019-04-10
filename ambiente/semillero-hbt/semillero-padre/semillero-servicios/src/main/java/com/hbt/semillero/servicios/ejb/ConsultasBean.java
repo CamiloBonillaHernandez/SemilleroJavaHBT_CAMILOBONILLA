@@ -15,16 +15,25 @@ import com.hbt.semillero.entidades.Marca;
 public class ConsultasBean {
 	
 	
-	
+	/**
+	 *
+	 */
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<Marca> consultarMarcas() {
 		return entityManager.createQuery("select ma FROM Marca ma").getResultList();
 	}
-	
+	/**
+	 * 
+	 * @param idMarca
+	 * @return
+	 */
 	public List<Linea> consultarLineas(Long idMarca){
 		return entityManager.createQuery("select ln FROM Linea ln where ln.marca.idLinea =:ID_LINEA")
 				.setParameter("ID_LINEA", idMarca).getResultList();
