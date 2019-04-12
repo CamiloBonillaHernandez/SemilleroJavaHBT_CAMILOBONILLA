@@ -1,55 +1,52 @@
 import { Component, OnInit } from '@angular/core';
-
-//modelo de datos 
-import {personaDTO} from './modelo/personaDTO';
+import { PersonaDTO } from  './modelo/PersonaDTO' 
 
 @Component({
   selector: 'app-apoyo',
   templateUrl: './apoyo.component.html'
 })
 export class ApoyoComponent implements OnInit {
-
-  public persona : personaDTO;
-  public personas : personaDTO[];
+  
   public mostrarFormulario:boolean;
-
+  
+  public persona: PersonaDTO;
+  public personas: PersonaDTO[];
+  
   constructor() { }
 
-  ngOnInit() {
-
-    this.persona  = {
-      id : '0',
-      nombre : '',
-      apellido : '',
-      fechaNacimiento: '',
-      tipoIdentificacion : '',
-      numeroIdentificacion : '',
-      mayorEdad : false, //check  box 
-      sexo : '', //radio button
-      telefono : '',
-      edad: '',
-      estado:''
+  public ngOnInit() {
+  	this.mostrarFormulario = true;
+  	this.persona = {
+        id: '0',
+		nombre: '',
+		apellido: '',
+		tipoIdentificacion: '',
+		numeroIdentificacion: '',
+		mayorEdad:false,
+		sexo:'',
     };
+    this.personas = [];
+  }
 
-    this.personas =  [];
-    this.mostrarFormulario = true;
+  mostrar(){
+  	this.mostrarFormulario = true;
   }
   
-  public mostrar(){
-
+  ocultar(){
+  	this.mostrarFormulario = false;
   }
-  public ocultar(){
-
-  }
-  public guardar(){
+  
+  public guardar() {
+  	console.log('guardando....' + this.persona.nombre);
     this.personas.push(this.persona);
-    console.log('guardar()' + this.persona.nombre);
+    console.log('cantidad de personas....' + this.personas.length);
+    
   }
-
-  private borrar(){
-
+  public borrar(persona: PersonaDTO) {
+  	console.log('borrando....');
+    this.personas = this.personas.filter(p => p.nombre !== persona.nombre);
+     
   }
+  
+  
 }
-
-
-

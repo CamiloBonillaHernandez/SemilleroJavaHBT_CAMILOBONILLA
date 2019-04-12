@@ -1,0 +1,55 @@
+import { Component, OnInit } from '@angular/core';
+
+//modelo de datos 
+import {personaDTO} from './modelo/personaDTO';
+
+@Component({
+  selector: 'app-apoyo',
+  templateUrl: './apoyo.component.html'
+})
+export class ApoyoComponent implements OnInit {
+
+  public persona : personaDTO;
+  public personas : personaDTO[];
+  public mostrarFormulario:boolean;
+
+  constructor() { }
+
+  ngOnInit() {
+
+    this.persona  = {
+      id : '0',
+      nombre : '',
+      apellido : '',
+      fechaNacimiento: '',
+      tipoIdentificacion : '',
+      numeroIdentificacion : '',
+      mayorEdad : false, //check  box 
+      sexo : '', //radio button
+      telefono : '',
+      edad: '',
+      estado:''
+    };
+
+    this.personas =  [];
+    this.mostrarFormulario = true;
+  }
+  
+  public mostrar(){
+
+  }
+  public ocultar(){
+
+  }
+  public guardar(){
+    this.personas.push(this.persona);
+    console.log('guardar()' + this.persona.nombre);
+  }
+
+  private borrar(){
+
+  }
+}
+
+
+
