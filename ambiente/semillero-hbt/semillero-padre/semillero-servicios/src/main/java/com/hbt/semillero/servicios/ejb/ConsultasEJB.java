@@ -79,17 +79,17 @@ public class ConsultasEJB implements IConsultasEjbLocal {
 		StringBuilder consulta = new StringBuilder("Select per FROM Persona per WHERE 1=1 ");
 		Map<String, Object> parametros = new HashMap<>();
 		if (tipoID != null) {
-			consulta.append(" and per.numeroIdentificacion =:tipoID");
+			consulta.append(" and per.tipoIdentificacion =:tipoID");
 			parametros.put("tipoID", tipoID);
 		}
 		if (numID != null) {
-			consulta.append("and per.numeroIdentificacion =:numID");
+			consulta.append(" and per.numeroIdentificacion =:numID");
 			parametros.put("numID", numID);
 		}
 		Query query = em.createQuery(consulta.toString());
 
 		for (Entry<String, Object> entry : parametros.entrySet()) {
-			query.setParameter(entry.getKey(), entry.getValue()).getResultList();
+			query.setParameter(entry.getKey(), entry.getValue());
 		}
 
 		List<Persona> personas = query.getResultList();

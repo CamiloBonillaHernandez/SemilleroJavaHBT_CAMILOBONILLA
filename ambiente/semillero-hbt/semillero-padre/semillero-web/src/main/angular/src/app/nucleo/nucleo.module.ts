@@ -8,10 +8,10 @@ import { PiePaginaComponent } from './capa/pie-pagina/pie-pagina.component';
 import { CreacionPersonasComponent } from './capa/principal/creacion-personas/creacion-personas.component';
 import { ApoyoComponent } from './capa/principal/apoyo/apoyo.component';
 import { FormsModule } from '@angular/forms';
-import { GestionVehiculosComponent } from './capa/principal/gestion_vehiculos/gestion_vehiculos.component';
-import { FiltrosComponent } from './capa/principal/gestion_vehiculos/filtros/filtros.component';
-import { ResultadosComponent } from './capa/principal/gestion_vehiculos/resultados/resultados.component';
-import { ConsultaVehiculosService } from './servicios/consulta-vehiculos-servicio/consulta.vehiculo.service'
+import { GestionVehiculosComponent } from './capa/principal/gestion-vehiculos/gestion-vehiculos.component';
+import { FiltrosComponent } from './capa/principal/gestion-vehiculos/filtros/filtros.component';
+import { ResultadosComponent } from './capa/principal/gestion-vehiculos/resultados/resultados.component';
+import { ConsultaVehiculosService } from './servicios/consulta-vehiculo-servicio/consulta.vehiculo.service'
 
 //Nucleo representa al modulo que va a contener los componentes que van a orquestar la aplicacion 
 //Debe ser importado en el componente principal AppModule

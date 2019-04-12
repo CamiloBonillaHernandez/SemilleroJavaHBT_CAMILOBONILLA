@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CreacionPersonasComponent } from './nucleo/capa/principal/creacion-personas/creacion-personas.component';
 import { ApoyoComponent } from './nucleo/capa/principal/apoyo/apoyo.component';
-//import { GestionVehiculosComponent } from './nucleo/capa/principal/gestion_vehiculos/gestion_vehiculos.component';
+import { GestionVehiculosComponent } from './nucleo/capa/principal/gestion-vehiculos/gestion-vehiculos.component';
 
 const routes: Routes = [
 	{   path: 'personas-crear',
@@ -11,9 +11,9 @@ const routes: Routes = [
   	{   path: 'componente-apoyo',
 	    component: ApoyoComponent
   	},
-  /*	{   path: 'vehiculos-gestion',
+  	{   path: 'vehiculos-gestion',
 	    component: GestionVehiculosComponent
-  	},*/
+  	},
 ];
 
 @NgModule({
