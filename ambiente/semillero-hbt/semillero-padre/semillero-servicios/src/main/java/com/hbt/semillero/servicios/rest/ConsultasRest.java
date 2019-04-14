@@ -14,6 +14,7 @@ import com.hbt.semillero.dto.LineaDTO;
 import com.hbt.semillero.dto.MarcaDTO;
 import com.hbt.semillero.dto.PersonaDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
+import com.hbt.semillero.dto.VehiculoDTO;
 import com.hbt.semillero.servicios.interfaces.IConsultasEjbLocal;
 
 /**
@@ -77,5 +78,12 @@ public class ConsultasRest {
 	@Produces(MediaType.APPLICATION_JSON)
 	public ResultadoDTO crearPersona(PersonaDTO persona) {
 		return consultaEJB.crearPersona(persona);
+	}
+	
+	@GET
+	@Path("/consultarVehiculosPorLinea")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<VehiculoDTO> consultarVehiculosPorLinea() {
+		return consultaEJB.consultarVehiculosPorLinea();
 	}
 }

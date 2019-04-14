@@ -15,12 +15,10 @@ export class GestionVehiculosComponent implements OnInit {
   ngOnInit() {
 
     this.vehiculo =  { 
-      marca: 'Mazda', 
+      idVehiculo: 'Mazda', 
       placa: '123ABC',
       linea: '', 
       modelo:'', 
-      color:''};
-
-  }
-
+    }
+  }  
 }

@@ -1,15 +1,67 @@
-<form>
-  <h2>
-    {{ marca }}
-  </h2>
-  <h3> Componente hijo / Presentacion</h3>
-  <div class="card">
-    <div class="section">
-      {{ placa }}
+  <form>
+    <h2>
+      {{ idVehiculo }}
+    </h2>
+    <h3> Componente hijo / Presentacion</h3>
+    <div class="card">
+      <div class="section">
+        {{ placa }}
+      </div>
     </div>
-  </div>
-  
-  <h2>Llamado servicios</h2>
-  <input value="Consultar personas" type="submit" (click)="consultarPersonas()" />
-  <pre>{{ listaPersonasDTO | json }}</pre>
-</form>
+    
+    <h2>Llamado servicios</h2>
+    <input value="Consultar personas" type="submit" (click)="consultarPersonas()" />
+    <pre>{{ listaPersonasDTO | json }}</pre>
+    
+        <h2>Llamado Servicios Gestionar Vehiculo</h2>
+        <br>
+        <br>
+
+        <TABLE  WIDTH="50%">
+                <TR>
+                    <TD>Marcas</TD>
+                    <TD ROWSPAN=3></TD>
+                    <TD>Lineas</TD>
+                </TR>
+                <TR>
+                    <TD>
+                            <select  >
+                                    <option *ngFor = "let marca of marcasDTO" value="marca">{{marca.nombre}}</option>
+
+                            </select>
+
+                    </TD> 
+                    <td>
+                      <select >
+                        <option *ngFor = "let linea of lineasDTO" value="linea">{{linea.nombre}}</option>
+                       </select>
+                    </td>
+                </TR>
+        </TABLE>
+        <br>
+        <br>
+        <table BORDER CELLPADDING=10 CELLSPACING=0 >
+            <tr>
+              <th>Marca</th>
+              <th>Linea</th>
+              <th>Placa</th>
+              <th>Modelo</th>
+              <th>(+)</th>
+            </tr>
+            <tr >  
+               
+            </tr> 
+          </table>
+
+          <p>Marcas</p>
+          <pre>{{ marcasDTO | json }}</pre>
+
+          <p>Lineas</p>
+          <pre>{{ lineasDTO | json }}</pre>
+
+          <p>Vehiculos</p>
+          <pre>{{ vehiculosDTO | json }}</pre>
+
+
+    
+  </form>

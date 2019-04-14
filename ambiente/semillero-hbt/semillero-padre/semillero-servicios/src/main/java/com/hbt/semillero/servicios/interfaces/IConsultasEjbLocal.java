@@ -8,6 +8,7 @@ import com.hbt.semillero.dto.LineaDTO;
 import com.hbt.semillero.dto.MarcaDTO;
 import com.hbt.semillero.dto.PersonaDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
+import com.hbt.semillero.dto.VehiculoDTO;
 
 /**
  * Expone los métodos del EJB ConsultasEJB
@@ -47,5 +48,12 @@ public interface IConsultasEjbLocal {
 	 * @return
 	 */
 	public ResultadoDTO crearPersona(PersonaDTO personaDTO);
+	
+	/**
+	 * 
+	 * @param idLinea
+	 * @return
+	 */
+	public List<VehiculoDTO> consultarVehiculosPorLinea();
 
 }

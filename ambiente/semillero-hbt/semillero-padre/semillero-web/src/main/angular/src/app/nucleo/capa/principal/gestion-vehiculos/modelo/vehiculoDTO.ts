@@ -1,7 +1,6 @@
 export interface VehiculoDTO {
-    marca: string;
+    idVehiculo: string;
     linea: string;
     placa: string;
     modelo: string;
-    color: string;
   }

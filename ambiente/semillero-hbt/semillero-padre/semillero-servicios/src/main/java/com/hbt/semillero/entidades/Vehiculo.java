@@ -1,5 +1,6 @@
 package com.hbt.semillero.entidades;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,6 +19,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "VEHICULO")
 public class Vehiculo {
+
+	/**
+	 * 
+	 */
 
 	@Id
 	@GeneratedValue(generator = "SEQ")
@@ -57,5 +62,15 @@ public class Vehiculo {
 	public void setLinea(Linea linea) {
 		this.linea = linea;
 	}
+
+	public Long getIdVehiculo() {
+		return idVehiculo;
+	}
+
+	public void setIdVehiculo(Long idVehiculo) {
+		this.idVehiculo = idVehiculo;
+	}
+	
+	
 
 }

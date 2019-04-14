@@ -18,10 +18,12 @@ import com.hbt.semillero.dto.LineaDTO;
 import com.hbt.semillero.dto.MarcaDTO;
 import com.hbt.semillero.dto.PersonaDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
+import com.hbt.semillero.dto.VehiculoDTO;
 import com.hbt.semillero.entidades.Comprador;
 import com.hbt.semillero.entidades.Linea;
 import com.hbt.semillero.entidades.Marca;
 import com.hbt.semillero.entidades.Persona;
+import com.hbt.semillero.entidades.Vehiculo;
 import com.hbt.semillero.entidades.Vendedor;
 import com.hbt.semillero.servicios.interfaces.IConsultasEjbLocal;
 
@@ -164,6 +166,27 @@ public class ConsultasEJB implements IConsultasEjbLocal {
 		marcaDto.setIdMarca(marca.getIdMarca());
 		marcaDto.setNombre(marca.getNombre());
 		return marcaDto;
+	}
+	
+	/**
+	 * 
+	 * @param idLinea
+	 * @return
+	 */
+	@Override
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public List<VehiculoDTO> consultarVehiculosPorLinea() {
+		List<Vehiculo> vehiculos = em.createQuery("Select vh from Vehiculo vh").getResultList();
+		List<VehiculoDTO> vehiculosRetorno = new ArrayList<>();
+		for (Vehiculo vehiculo : vehiculos) {
+			VehiculoDTO vehiculoDTO = new VehiculoDTO();
+			vehiculoDTO.setIdVehiculo(vehiculo.getIdVehiculo());
+			vehiculoDTO.setLinea(vehiculo.getLinea());
+			vehiculoDTO.setModelo(vehiculo.getModelo());
+			vehiculoDTO.setPlaca(vehiculo.getPlaca());
+			vehiculosRetorno.add(vehiculoDTO);
+		}
+		return vehiculosRetorno;
 	}
 
 }
